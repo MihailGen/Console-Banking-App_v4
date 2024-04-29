@@ -7,11 +7,10 @@ def postponed_trigger(login_sndr):
     money = int(client_from_file()[5])
     postponed_tmp = {}
     flag = 0
-    if os.path.isdir('postponed_payments/' + login_sndr + '.' + 'postponed.txt'):
+    if os.path.isfile('postponed_payments/' + login_sndr + '.' + 'postponed.txt'):
         # reading postponed payments from file to a temporary dictionary and execute postponed payments
         with open('postponed_payments/' + login_sndr + '.' + 'postponed.txt') as postponedfout:
             count = 0
-
             for line in postponedfout:
                 count += 1
                 if (count % 2) != 0:
@@ -25,8 +24,6 @@ def postponed_trigger(login_sndr):
                                 :-1] + " rubles\nhas been executed!\n")
                     else:
                         postponed_tmp[comment_tmp] = int(line[:-1])
-
-
     # Rewriting postponed payments file
     if flag > 0:
         with open('postponed_payments/' + login_sndr + '.' + 'postponed.txt', "w") as tranfout:
