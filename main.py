@@ -115,7 +115,6 @@ def hash_to_file(hsh, login):
 def check_log(login):
     if not os.path.isfile('bank_clients/' + login + '.' + 'passwordhash.txt'):
         print('\n*************\nUnknown login! Please contact an administrator.\n')
-        print('bank_clients/' + login + '.' + 'passwordhash.txt')
         return False
     else:
         return True
