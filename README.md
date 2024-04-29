@@ -17,4 +17,4 @@ It implements basic banking operations:
 11) Implemented password hashing function
 
 Thank you for your attention!
-Best regards, Mikail Genzik
+Best regards, Mihail Genzik
